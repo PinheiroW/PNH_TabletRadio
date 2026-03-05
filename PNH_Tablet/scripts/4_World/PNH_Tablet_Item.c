@@ -1,4 +1,5 @@
-class PNH_Tablet_ColorBase : ItemBase
+// Herdamos de Clothing de novo
+class PNH_Tablet_ColorBase : Clothing
 {
     override void SetActions()
     {

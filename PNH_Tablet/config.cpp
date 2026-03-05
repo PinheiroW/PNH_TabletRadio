@@ -32,25 +32,31 @@ class CfgMods
 
 class CfgVehicles
 {
-    // A nossa salvação: Item de Mão (Zero crashes de esqueleto)
-	class Inventory_Base;
-	class ItemBase: Inventory_Base {};
+    // Declaração segura para não quebrar o servidor
+	class Clothing;
 	
-	class PNH_Tablet_ColorBase: ItemBase
+	class PNH_Tablet_ColorBase: Clothing
 	{
 		scope=0;
 		displayName="Tablet Tatico PNH";
 		descriptionShort="Dispositivo tatico multifuncional.";
         
-        // Aponta para o modelo 3D de chão do modelo antigo
+        // O modelo que fica no chão
 		model="PNH_Tablet\\GPS_Tablet\\data\\tab2_g.p3d";
+		inventorySlot[]={"Armband"};
+		itemInfo[]={"Clothing","Armband"};
 		animClass="ItemPDA";
 		rotationFlags=34;
 		weight=500;
 		itemSize[]={2,3};
-        
 		attachments[]={"BatteryD"};
 		
+        // Os modelos que se moldam ao braço do personagem
+		class ClothingTypes
+		{
+			male="PNH_Tablet\\GPS_Tablet\\data\\tab2_m.p3d";
+			female="PNH_Tablet\\GPS_Tablet\\data\\tab2_f.p3d";
+		};
 		class EnergyManager
 		{
 			hasIcon=1;
@@ -64,8 +70,6 @@ class CfgVehicles
 	class PNH_Tablet_Black: PNH_Tablet_ColorBase
 	{
 		scope=2;
-        
-        // As seleções originais que sabemos que funcionam
 		hiddenSelections[]={"lcd_1","lcd_2","zbytek"};
         
 		hiddenSelectionsTextures[]=
