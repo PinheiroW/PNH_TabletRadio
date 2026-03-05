@@ -40,7 +40,8 @@ class CfgVehicles
 		scope=0;
 		displayName="Tablet Tatico PNH";
 		descriptionShort="Dispositivo tatico multifuncional.";
-		model="PNH_Tablet\GPS_Tablet\data\tab2_g.p3d";
+        
+		model="PNH_Tablet\\GPS_Tablet\\data\\tab2_g.p3d";
 		inventorySlot[]={"Armband"};
 		itemInfo[]={"Clothing","Armband"};
 		animClass="ItemPDA";
@@ -51,8 +52,8 @@ class CfgVehicles
 		
 		class ClothingTypes
 		{
-			male="PNH_Tablet\GPS_Tablet\data\tab2_m.p3d";
-			female="PNH_Tablet\GPS_Tablet\data\tab2_f.p3d";
+			male="PNH_Tablet\\GPS_Tablet\\data\\tab2_m.p3d";
+			female="PNH_Tablet\\GPS_Tablet\\data\\tab2_f.p3d";
 		};
 		class EnergyManager
 		{
@@ -68,17 +69,18 @@ class CfgVehicles
 	{
 		scope=2;
 		hiddenSelections[]={"lcd_1","lcd_2","zbytek"};
+        
 		hiddenSelectionsTextures[]=
 		{
-			"PNH_Tablet\GPS_Tablet\data\textures\lcd_co.paa",
-			"PNH_Tablet\GPS_Tablet\data\textures\lcd_co.paa",
-			"PNH_Tablet\GPS_Tablet\data\textures\tab2_co.paa"
+			"PNH_Tablet\\GPS_Tablet\\data\\textures\\lcd_co.paa",
+			"PNH_Tablet\\GPS_Tablet\\data\\textures\\lcd_co.paa",
+			"PNH_Tablet\\GPS_Tablet\\data\\textures\\tab2_co.paa"
 		};
         hiddenSelectionsMaterials[]=
         {
-            "PNH_Tablet\GPS_Tablet\data\textures\lcd_mat.rvmat",
-            "PNH_Tablet\GPS_Tablet\data\textures\lcd_mat.rvmat",
-            "PNH_Tablet\GPS_Tablet\data\textures\tab2.rvmat"
+            "PNH_Tablet\\GPS_Tablet\\data\\textures\\lcd_mat.rvmat",
+            "PNH_Tablet\\GPS_Tablet\\data\\textures\\lcd_mat.rvmat",
+            "PNH_Tablet\\GPS_Tablet\\data\\textures\\tab2.rvmat"
         };
 	};
 };
