@@ -5,11 +5,7 @@ class CfgPatches
 		units[]={};
 		weapons[]={};
 		requiredVersion=0.1;
-		requiredAddons[]=
-		{
-			"DZ_Data",
-			"DZ_Scripts"
-		};
+		requiredAddons[]={"DZ_Data","DZ_Scripts"};
 	};
 };
 
@@ -18,56 +14,31 @@ class CfgMods
 	class PNH_TabletOS
 	{
 	    dir="PNH_TabletOS";
-	    picture="";
-	    action="";
 	    hideName=1;
-	    hidePicture=1;
 	    name="PNH Tablet OS";
-	    credits="Pinheiro";
 	    author="Pinheiro";
-	    authorID="0";
 	    version="1.0";
-	    extra=0;
 	    type="mod";
-	    
-	    // AQUI ESTÁ A LINHA MÁGICA QUE FALTAVA!
 	    inputs="PNH_TabletOS/scripts/3_Game/inputs.xml";
 	    
-	    dependencies[]=
-	    {
-	        "Game",
-	        "World",
-	        "Mission"
-	    };
+	    dependencies[]={"Game","World","Mission"};
 	    
 	    class defs
 	    {
 			class gameScriptModule
             {
                 value="";
-                files[]=
-                {
-                    "PNH_TabletOS/scripts/Common",
-                    "PNH_TabletOS/scripts/3_Game"
-                };
+                files[]={"PNH_TabletOS/scripts/Common","PNH_TabletOS/scripts/3_Game"};
             };
             class worldScriptModule
             {
                 value="";
-                files[]=
-                {
-                    "PNH_TabletOS/scripts/Common",
-                    "PNH_TabletOS/scripts/4_World"
-                };
+                files[]={"PNH_TabletOS/scripts/Common","PNH_TabletOS/scripts/4_World"};
             };
             class missionScriptModule
             {
                 value="";
-                files[]=
-                {
-                    "PNH_TabletOS/scripts/Common",
-                    "PNH_TabletOS/scripts/5_Mission"
-                };
+                files[]={"PNH_TabletOS/scripts/Common","PNH_TabletOS/scripts/5_Mission"};
             };
         };
     };

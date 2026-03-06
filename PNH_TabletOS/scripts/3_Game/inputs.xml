@@ -2,14 +2,14 @@
 <modded_inputs>
     <inputs>
         <groups>
-            <group name="PNH" loc="PNH" />
+            <group name="PNH_Suite" loc="PNH" />
         </groups>
         <actions>
-             <input name="UAPNHTablet" loc="Abrir Tablet" group="PNH" visible="true" />
+             <input name="UAPNHTablet" loc="Abrir Tablet" group="PNH_Suite" visible="true" />
         </actions>
     </inputs>
     <preset>
-		<input name="UAPNHTablet">
+        <input name="UAPNHTablet">
             <btn name="kM" />
         </input>
     </preset>
