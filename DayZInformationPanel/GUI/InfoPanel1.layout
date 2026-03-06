@@ -18,7 +18,7 @@ FrameWidgetClass rootFrame {
    vexactpos 1
    hexactsize 1
    vexactsize 1
-   imageTexture "{C8226E0D445768E1}DayZInformationPanel/GUI/Images/DIP_Tablet.edds"
+   imageTexture "{C8226E0D445768E1}PNH_TabletOS/GUI/Images/DIP_Tablet.edds"
    mode blend
    "src alpha" 1
    "no wrap" 1
@@ -153,42 +153,10 @@ FrameWidgetClass rootFrame {
      hexactsize 0
      vexactsize 0
      style Default
+     no focus 0
      lines 50
      "highlight row" 0
      font "gui/fonts/etelkatextpro14"
-    }
-    ScrollWidgetClass Scroll_Tab1 {
-     visible 0
-     ignorepointer 1
-     position 0.0011 0.0347
-     size 1 0.93
-     halign center_ref
-     valign center_ref
-     hexactpos 0
-     vexactpos 0
-     hexactsize 0
-     vexactsize 0
-     "Scrollbar V" 1
-     {
-      RichTextWidgetClass txt_Info_Tab1 {
-       ignorepointer 1
-       position 0 -0.002
-       size 1 1
-       halign center_ref
-       valign center_ref
-       hexactpos 0
-       vexactpos 0
-       hexactsize 0
-       vexactsize 0
-       style DayZNormal
-       text "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-       font "gui/fonts/MetronLight16"
-       "exact text" 1
-       wrap 1
-       "condense whitespace" 1
-       "strip newlines" 1
-      }
-     }
     }
    }
   }
@@ -226,41 +194,10 @@ FrameWidgetClass rootFrame {
      vexactpos 0
      hexactsize 0
      vexactsize 0
+     style Default
+     no focus 0
      lines 50
      font "gui/fonts/etelkatextpro14"
-    }
-    ScrollWidgetClass Scroll_Tab2 {
-     visible 0
-     ignorepointer 1
-     position 0.00111 0.03472
-     size 1 0.93
-     halign center_ref
-     valign center_ref
-     hexactpos 0
-     vexactpos 0
-     hexactsize 0
-     vexactsize 0
-     "Scrollbar V" 1
-     {
-      RichTextWidgetClass txt_Info_Tab2 {
-       ignorepointer 1
-       position 0 -0.002
-       size 1 1
-       halign center_ref
-       valign center_ref
-       hexactpos 0
-       vexactpos 0
-       hexactsize 0
-       vexactsize 0
-       style DayZNormal
-       text "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-       font "gui/fonts/MetronLight16"
-       "exact text" 1
-       wrap 1
-       "condense whitespace" 1
-       "strip newlines" 1
-      }
-     }
     }
    }
   }
@@ -298,41 +235,10 @@ FrameWidgetClass rootFrame {
      vexactpos 0
      hexactsize 0
      vexactsize 0
+     style Default
+     no focus 0
      lines 50
      font "gui/fonts/etelkatextpro14"
-    }
-    ScrollWidgetClass Scroll_Tab3 {
-     visible 0
-     ignorepointer 1
-     position 0.00111 0.03472
-     size 1 0.93
-     halign center_ref
-     valign center_ref
-     hexactpos 0
-     vexactpos 0
-     hexactsize 0
-     vexactsize 0
-     "Scrollbar V" 1
-     {
-      RichTextWidgetClass txt_Info_Tab3 {
-       ignorepointer 1
-       position 0 -0.002
-       size 1 1
-       halign center_ref
-       valign center_ref
-       hexactpos 0
-       vexactpos 0
-       hexactsize 0
-       vexactsize 0
-       style DayZNormal
-       text "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-       font "gui/fonts/MetronLight16"
-       "exact text" 1
-       wrap 1
-       "condense whitespace" 1
-       "strip newlines" 1
-      }
-     }
     }
    }
   }
@@ -370,42 +276,10 @@ FrameWidgetClass rootFrame {
      vexactpos 0
      hexactsize 0
      vexactsize 0
-     "no focus" 0
+     style Default
+     no focus 0
      lines 50
      font "gui/fonts/etelkatextpro14"
-    }
-    ScrollWidgetClass Scroll_Tab4 {
-     visible 0
-     ignorepointer 1
-     position 0.00111 0.03472
-     size 1 0.93
-     halign center_ref
-     valign center_ref
-     hexactpos 0
-     vexactpos 0
-     hexactsize 0
-     vexactsize 0
-     "Scrollbar V" 1
-     {
-      RichTextWidgetClass txt_Info_Tab4 {
-       ignorepointer 1
-       position 0 -0.002
-       size 1 1
-       halign center_ref
-       valign center_ref
-       hexactpos 0
-       vexactpos 0
-       hexactsize 0
-       vexactsize 0
-       style DayZNormal
-       text "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-       font "gui/fonts/MetronLight16"
-       "exact text" 1
-       wrap 1
-       "condense whitespace" 1
-       "strip newlines" 1
-      }
-     }
     }
    }
   }

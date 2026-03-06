@@ -87,18 +87,26 @@ class DayZInformationPanelUI extends UIScriptedMenu
         if (name == "btn_Discord") { GetGame().OpenURL(GetDiPConfigClient().DiscordLink); return true; }
         if (name == "btn_Donate") { GetGame().OpenURL(GetDiPConfigClient().DonateLink); return true; }
 
-        // Controles de Rádio
-        if (name == "btn_PlayRadio") {
+        // O seu clique original diretamente na lista
+        if (name == "lstbox_Tab2") {
             int row = m_ListBox2.GetSelectedRow();
-            if (row != -1) PNH_RadioManager.GetInstance().PlayStation(row);
-            return true;
-        }
-
-        if (name == "btn_StopRadio") {
-            PNH_RadioManager.GetInstance().Stop();
+            if (row != -1) {
+                PNH_RadioManager.GetInstance().PlayStation(row);
+            }
             return true;
         }
 
         return false;
     }
-}
+
+    override void Update(float timeslice)
+    {
+        super.Update(timeslice);
+        if (m_ServerTime) {
+            int year, month, day, hour, minute;
+            GetHourMinuteSecond(hour, minute, year);
+            string time = hour.ToStringLen(2) + ":" + minute.ToStringLen(2);
+            m_ServerTime.SetText(time);
+        }
+    }
+};

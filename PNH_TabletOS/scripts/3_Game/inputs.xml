@@ -12,7 +12,7 @@
 
     <preset>
         <input name="UAPNHTablet">
-            <btn name="kT"/>
+            <btn name="kM"/>
         </input>
     </preset>
 </modded_inputs>

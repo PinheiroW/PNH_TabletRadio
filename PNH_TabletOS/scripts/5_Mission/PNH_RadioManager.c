@@ -16,23 +16,24 @@ class PNH_RadioManager
         array<ref PNH_RadioStation> stations = PNH_Radio_Database.GetStations();
         if (index < 0 || index >= stations.Count()) return;
 
-        string targetSoundSet = stations.Get(index).m_SoundName + "_SoundSet";
-        if (m_CurrentStationIndex == index && m_SoundPlaying) return;
+        // Se o jogador clicar na mesma rádio que já está tocando, o som desliga.
+        if (m_CurrentStationIndex == index && m_SoundPlaying) {
+            Stop();
+            Print("[PNH_Radio] Rádio parada pelo clique duplo.");
+            return;
+        }
 
+        string targetSoundSet = stations.Get(index).m_SoundName + "_SoundSet";
         Stop();
 
-        // Obtém o jogador atual para que o som saia dele
         PlayerBase player = PlayerBase.Cast(GetGame().GetPlayer());
         
         if (player) {
-            // CORREÇÃO (Linha 24): A função correta do DayZ é PlaySoundOnObject
             m_SoundPlaying = SEffectManager.PlaySoundOnObject(targetSoundSet, player);
-            
             if (m_SoundPlaying) {
                 m_SoundPlaying.SetSoundLoop(stations.Get(index).m_IsLoop);
                 m_SoundPlaying.SetSoundAutodestroy(true);
                 m_CurrentStationIndex = index;
-                Print("[PNH_Radio] Som iniciado via SEffectManager: " + targetSoundSet);
             }
         }
     }
@@ -47,7 +48,6 @@ class PNH_RadioManager
     }
 }
 #else
-// Versão vazia para o Servidor não crashar ao ler a classe
 class PNH_RadioManager {
     static ref PNH_RadioManager m_Instance;
     static PNH_RadioManager GetInstance() { return null; }
