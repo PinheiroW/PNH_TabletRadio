@@ -1,9 +1,8 @@
 class DayZInformationPanelUI extends UIScriptedMenu
 {
     protected Widget m_PanelTab1, m_PanelTab2, m_PanelTab3, m_PanelTab4;
-    protected TextWidget m_HeaderTab1, m_HeaderTab2, m_HeaderTab3, m_HeaderTab4;
+    protected TextWidget m_HeaderTab1, m_HeaderTab2, m_HeaderTab3, m_HeaderTab4, m_ServerName, m_ServerTime;
     protected TextListboxWidget m_ListBox1, m_ListBox2, m_ListBox3, m_ListBox4;
-    protected TextWidget m_ServerName, m_ServerTime;
     protected bool m_MenuOpen = false;
 
     override Widget Init()
@@ -78,43 +77,28 @@ class DayZInformationPanelUI extends UIScriptedMenu
     {
         string name = w.GetName();
 
-        // Navegação das Abas
+        // Navegação das abas
         if (name == "btn_Tab1") { UpdateTab(1); return true; }
         if (name == "btn_Tab2") { UpdateTab(2); return true; }
         if (name == "btn_Tab3") { UpdateTab(3); return true; }
         if (name == "btn_Tab4") { UpdateTab(4); return true; }
 
-        // Botões Sociais
+        // Links
         if (name == "btn_Discord") { GetGame().OpenURL(GetDiPConfigClient().DiscordLink); return true; }
         if (name == "btn_Donate") { GetGame().OpenURL(GetDiPConfigClient().DonateLink); return true; }
 
-        // --- NOVA LÓGICA DE BOTÕES DE ÁUDIO ---
+        // Controles de Rádio
         if (name == "btn_PlayRadio") {
             int row = m_ListBox2.GetSelectedRow();
-            if (row != -1) {
-                PNH_RadioManager.GetInstance().PlayStation(row);
-                Print("[PNH_Tablet] PLAY pressionado para rádio indice: " + row);
-            }
+            if (row != -1) PNH_RadioManager.GetInstance().PlayStation(row);
             return true;
         }
 
         if (name == "btn_StopRadio") {
             PNH_RadioManager.GetInstance().Stop();
-            Print("[PNH_Tablet] STOP pressionado.");
             return true;
         }
 
         return false;
     }
-
-    override void Update(float timeslice)
-    {
-        super.Update(timeslice);
-        if (m_ServerTime) {
-            int year, month, day, hour, minute;
-            GetHourMinuteSecond(hour, minute, year);
-            string time = hour.ToStringLen(2) + ":" + minute.ToStringLen(2);
-            m_ServerTime.SetText(time);
-        }
-    }
-};
+}
