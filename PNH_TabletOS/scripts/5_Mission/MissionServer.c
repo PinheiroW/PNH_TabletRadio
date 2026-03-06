@@ -1,20 +1,31 @@
-modded class MissionServer extends MissionBase
+modded class MissionServer
 {
-	override void OnInit()
-	{
-		super.OnInit();
-		// Inicializa o sistema centralizado no arranque do servidor
-		GetDiPSystemCore();
-	}
+    override void OnInit()
+    {
+        super.OnInit();
+        // Inicializa o Core e carrega o JSON
+        GetDiPSystemCore(); 
+    }
 
-	override void InvokeOnConnect(PlayerBase player, PlayerIdentity identity)
-	{
-		super.InvokeOnConnect(player, identity);
-		
-        // Envia as configurações do servidor para o tablet do jogador que acabou de ligar
-        if (GetDiPSystemCore() && GetDiPSystemCore().m_ConfigSettingsClient)
+    override void InvokeOnConnect(PlayerBase player, PlayerIdentity identity)
+    {
+        super.InvokeOnConnect(player, identity);
+        
+        if (identity && player)
         {
-            DiPRPC_SendSettings(identity, GetDiPSystemCore().m_ConfigSettingsClient);
+            DiPSystemCore core = GetDiPSystemCore();
+            
+            // Verificação de segurança: O servidor tem os dados para enviar?
+            if (core && core.m_ConfigSettingsClient)
+            {
+                // Envia as configurações para o tablet do jogador
+                DiPRPC_SendSettings(identity, core.m_ConfigSettingsClient);
+                Print("[PNH_Tablet] Sucesso: Configurações enviadas para " + identity.GetName());
+            }
+            else
+            {
+                Print("[PNH_Tablet] Erro Crítico: Tentativa de envio falhou pois m_ConfigSettingsClient está nulo!");
+            }
         }
-	}
-};
+    }
+}
