@@ -26,7 +26,7 @@ class ConfigSettingsClient
 		Tab4_Info 	= new array<string>;
 	}
 
-	void TransformToSendableConfig(ref DiPSettings m_DiPSettings)
+	void TransformToSendableConfig(DiPSettings m_DiPSettings)
 	{
 		#ifdef DIPDEBUG
 		GetDiPLogger().LogInfo("Creating Useable Client Config!");

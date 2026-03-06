@@ -30,6 +30,9 @@ class CfgMods
 	    extra=0;
 	    type="mod";
 	    
+	    // AQUI ESTÁ A LINHA MÁGICA QUE FALTAVA!
+	    inputs="PNH_TabletOS/scripts/3_Game/inputs.xml";
+	    
 	    dependencies[]=
 	    {
 	        "Game",

@@ -1,3 +1,6 @@
+class DiPSystemCore;
+class ConfigSettingsClient;
+
 static ref DiPLogger g_DiPLogger;
 static DiPLogger GetDiPLogger(){
 	if (!g_DiPLogger) {

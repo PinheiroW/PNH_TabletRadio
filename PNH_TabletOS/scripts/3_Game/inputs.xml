@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <modded_inputs>
-    <groups>
-        <group name="PNH_Group" loc="PNH" />
-    </groups>
-
     <inputs>
+        <groups>
+            <group name="PNH" loc="PNH" />
+        </groups>
         <actions>
-             <input name="UAPNHTablet" loc="Abrir Tablet" group="PNH_Group" visible="true" />
+             <input name="UAPNHTablet" loc="Abrir Tablet" group="PNH" visible="true" />
         </actions>
     </inputs>
-
     <preset>
 		<input name="UAPNHTablet">
             <btn name="kM" />
