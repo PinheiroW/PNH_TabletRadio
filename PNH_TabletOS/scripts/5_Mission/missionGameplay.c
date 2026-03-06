@@ -34,7 +34,7 @@ modded class MissionGameplay extends MissionBase
         }
 
         // Tenta abrir ou fechar o Tablet ao pressionar "M"
-		if (input.LocalPress("UAOpenInformationPanel", false))
+		if (input.LocalPress("UAPNHTablet", false))
         {
             bool canOpen = true;
 

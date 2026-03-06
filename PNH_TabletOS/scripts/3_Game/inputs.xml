@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <modded_inputs>
+    <groups>
+        <group name="PNH_Group" loc="PNH" />
+    </groups>
+
     <inputs>
         <actions>
-             <input name="UAOpenInformationPanel" loc="Open Custom Menu" visible="true" />
+             <input name="UAPNHTablet" loc="Abrir Tablet" group="PNH_Group" visible="true" />
         </actions>
     </inputs>
+
     <preset>
-		<input name="UAOpenInformationPanel">
-            <btn name="kPAUSE">
-            </btn>
+		<input name="UAPNHTablet">
+            <btn name="kM" />
         </input>
     </preset>
 </modded_inputs>
