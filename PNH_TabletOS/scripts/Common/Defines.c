@@ -1,2 +1,3 @@
 #define DIPDEBUG
 #define DAYZINFOPANEL
+#define PNH_TABLETOS

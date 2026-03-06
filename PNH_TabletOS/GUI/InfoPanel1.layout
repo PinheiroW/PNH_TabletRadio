@@ -18,7 +18,7 @@ FrameWidgetClass rootFrame {
    vexactpos 1
    hexactsize 1
    vexactsize 1
-   imageTexture "{C8226E0D445768E1}DayZInformationPanel/GUI/Images/DIP_Tablet.edds"
+   imageTexture "{C8226E0D445768E1}PNH_TabletOS/GUI/Images/DIP_Tablet.edds"
    mode blend
    "src alpha" 1
    "no wrap" 1

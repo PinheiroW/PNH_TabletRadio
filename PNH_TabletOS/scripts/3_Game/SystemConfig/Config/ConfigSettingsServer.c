@@ -5,6 +5,10 @@ class DiPSettings
 	string 			DiscordLink;
 	string 			DonateLink;
 
+    // As variáveis que faltavam para o JSON (1 = Sim, 0 = Não)
+	int 			AllowUseWhileDriving;
+	int 			AllowUseWhileBleeding;
+
 	string 			Tab1_Header;
 	ref array<string> Tab1_Info;
 	string 			Tab2_Header;
@@ -24,14 +28,19 @@ class DiPSettings
 
 	void DiPDefaultSettings()
 	{
-		ConfigVersion				 	= "1.1";
+		ConfigVersion				 	= "1.2"; 
 		ServerName					 	= "YourServerNameHere";
 		DiscordLink 				 	= "https://discord.gg/SEDuZWSSpe";
 		DonateLink 					 	= "https://www.paypal.me/ApocalypticChaosDayZ";
-		Tab1_Header				 			= "Tab_1_Text";
-		Tab2_Header				 			= "Tab_2_Text";
-		Tab3_Header				 			= "Tab_3_Text";
-		Tab4_Header				 			= "Tab_4_Text";
+        
+        // Valores padrão ao criar o JSON
+		AllowUseWhileDriving 			= 1; 
+		AllowUseWhileBleeding 			= 1;
+
+		Tab1_Header				 		= "Tab_1_Text";
+		Tab2_Header				 		= "Tab_2_Text";
+		Tab3_Header				 		= "Tab_3_Text";
+		Tab4_Header				 		= "Tab_4_Text";
 
 		for (int i = 0; i < 10; i++)	{
 			Tab1_Info.Insert("Write your desired Tab 1 info here " + i);
@@ -48,17 +57,11 @@ class DiPSettings
 	{
 		DiPSettings settings = new DiPSettings();
 
-			if ( !FileExist( DIP_CONFIG_ROOT_SERVER ) )
-			{
-				MakeDirectory( DIP_CONFIG_ROOT_SERVER );
-				if ( !FileExist( DIP_CONFIG_DIR_SERVER ) )
-				{
-					MakeDirectory( DIP_CONFIG_DIR_SERVER );
-				}
-				if ( !FileExist( DIP_LOGGER_DIR_SERVER ) )
-				{
-					MakeDirectory( DIP_LOGGER_DIR_SERVER );
-				}
+		if ( !FileExist( DIP_CONFIG_ROOT_SERVER ) )
+		{
+			MakeDirectory( DIP_CONFIG_ROOT_SERVER );
+			if ( !FileExist( DIP_CONFIG_DIR_SERVER ) ) MakeDirectory( DIP_CONFIG_DIR_SERVER );
+			if ( !FileExist( DIP_LOGGER_DIR_SERVER ) ) MakeDirectory( DIP_LOGGER_DIR_SERVER );
 		}
 
 		if (FileExist(DIP_CONFIG)) {
