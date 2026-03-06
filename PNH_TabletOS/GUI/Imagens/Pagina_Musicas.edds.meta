@@ -1,0 +1,16 @@
+MetaFileClass {
+ Name "{2F469B6DFFB9D294}Imagens/Pagina Musicas.edds"
+ Author "desktop-slocuqf"
+ ChangeDate -238308250
+ Configurations {
+  PNGResourceClass PC {
+   SourceFile "Pagina Musicas.png"
+  }
+  PNGResourceClass XBOX_ONE : PC {
+  }
+  PNGResourceClass PS4 : PC {
+  }
+  PNGResourceClass LINUX : PC {
+  }
+ }
+}

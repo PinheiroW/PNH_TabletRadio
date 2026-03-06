@@ -1,0 +1,16 @@
+MetaFileClass {
+ Name "{AFA73EF20F93EA90}Imagens/Pagina Maps.edds"
+ Author "desktop-slocuqf"
+ ChangeDate -238308250
+ Configurations {
+  PNGResourceClass PC {
+   SourceFile "Pagina Maps.png"
+  }
+  PNGResourceClass XBOX_ONE : PC {
+  }
+  PNGResourceClass PS4 : PC {
+  }
+  PNGResourceClass LINUX : PC {
+  }
+ }
+}

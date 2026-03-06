@@ -1,6 +1,6 @@
 FrameWidgetClass rootFrame {
- position 2.26751 0
- size 1447.93018 1041.92004
+ position 0 0
+ size 1920 1080
  halign center_ref
  valign center_ref
  hexactpos 1
@@ -8,280 +8,434 @@ FrameWidgetClass rootFrame {
  hexactsize 1
  vexactsize 1
  {
+  // IMAGEM BASE (Evita tela preta durante a troca)
   ImageWidgetClass ImageWidget0 {
    ignorepointer 1
-   position 0 -0.42
-   size 1126.18982 695.10992
+   position 0 0
+   size 1920 1080
    halign center_ref
    valign center_ref
    hexactpos 1
    vexactpos 1
    hexactsize 1
    vexactsize 1
-   imageTexture "{C8226E0D445768E1}PNH_TabletOS/GUI/Images/DIP_Tablet.edds"
+   imageTexture "PNH_TabletOS/GUI/Imagens/Pagina_Inicial.edds"
    mode blend
    "src alpha" 1
    "no wrap" 1
    stretch 1
+  }
+
+  // ==========================================
+  // ABA 1 - INICIAL / REGRAS
+  // ==========================================
+  PanelWidgetClass Panel_Tab1 {
+   ignorepointer 1
+   position 0 0
+   size 1920 1080
+   hexactpos 1
+   vexactpos 1
+   hexactsize 1
+   vexactsize 1
    {
-    PanelWidgetClass panel_InfoScreen {
+    ImageWidgetClass img_bg1 {
      ignorepointer 1
-     position 104.01 52.22
-     size 914.31097 586.62299
+     position 0 0
+     size 1920 1080
+     hexactpos 1
+     vexactpos 1
+     hexactsize 1
+     vexactsize 1
+     imageTexture "PNH_TabletOS/GUI/Imagens/Pagina_Inicial.edds"
+     mode blend
+     "src alpha" 1
+     "no wrap" 1
+     stretch 1
+    }
+    PanelWidgetClass content_Tab1 {
+     ignorepointer 1
+     position 370 187
+     size 1146 717
      hexactpos 1
      vexactpos 1
      hexactsize 1
      vexactsize 1
      {
-      TextWidgetClass txt_IPServerName {
+      TextWidgetClass txt_Tab1 {
+       visible 1
        ignorepointer 1
-       position 1.1 1.8455
-       size 714.79999 36
-       hexactpos 1
-       vexactpos 1
-       hexactsize 1
-       vexactsize 1
+       position 0 -0.465
+       size 1 0.0625
+       halign center_ref
+       valign center_ref
+       hexactpos 0
+       vexactpos 0
+       hexactsize 0
+       vexactsize 0
        text "XXXXXXXXXX"
-       font "gui/fonts/etelkatextpro16"
+       font "gui/fonts/etelkatextpro22"
+       "text halign" center
        "text valign" center
+       color 0.75 0.35 0.05 1
       }
-      TextWidgetClass txt_IPServerTime {
-       ignorepointer 1
-       position 716.76001 1.8455
-       size 196.5 36
-       hexactpos 1
-       vexactpos 1
-       hexactsize 1
-       vexactsize 1
-       text "XX:XX"
-       font "gui/fonts/etelkatextpro16"
-       "text halign" right
-       "text valign" center
+      TextListboxWidgetClass lstbox_Tab1 {
+       visible 1
+       clipchildren 1
+       position 0 0.036
+       size 1 0.93
+       halign center_ref
+       valign center_ref
+       hexactpos 0
+       vexactpos 0
+       hexactsize 0
+       vexactsize 0
+       style Default
+       no focus 0
+       lines 50
+       "highlight row" 0
+       font "gui/fonts/etelkatextpro14"
+       color 0.80 0.75 0.65 1
       }
      }
     }
-    ButtonWidgetClass btn_Discord {
-     position 7.62 494.16
-     size 48 48
-     hexactpos 1
-     vexactpos 1
-     hexactsize 1
-     vexactsize 1
-     style Default
-    }
-    ButtonWidgetClass btn_Donate {
-     position 7.62 579.89001
-     size 48 48
-     hexactpos 1
-     vexactpos 1
-     hexactsize 1
-     vexactsize 1
-     style Default
-    }
-    ButtonWidgetClass btn_Tab1 {
-     position 1066.56995 178.33
-     size 48 48
-     hexactpos 1
-     vexactpos 1
-     hexactsize 1
-     vexactsize 1
-     style Default
-    }
-    ButtonWidgetClass btn_Tab2 {
-     position 1066.56995 264.32999
-     size 48 48
-     hexactpos 1
-     vexactpos 1
-     hexactsize 1
-     vexactsize 1
-     style Default
-    }
-    ButtonWidgetClass btn_Tab3 {
-     position 1064.56995 351.32999
-     size 48 48
-     hexactpos 1
-     vexactpos 1
-     hexactsize 1
-     vexactsize 1
-     style Default
-    }
-    ButtonWidgetClass btn_Tab4 {
-     position 1064.43018 438.32999
-     size 48 48
-     hexactpos 1
-     vexactpos 1
-     hexactsize 1
-     vexactsize 1
-     style Default
-    }
    }
   }
-  PanelWidgetClass Panel_Tab1 {
-   ignorepointer 1
-   position 264.41101 262.71002
-   size 914.25897 550.19
-   hexactpos 1
-   vexactpos 1
-   hexactsize 1
-   vexactsize 1
-   {
-    TextWidgetClass txt_Tab1 {
-     visible 1
-     ignorepointer 1
-     position 0 -0.465
-     size 1 0.0625
-     halign center_ref
-     valign center_ref
-     hexactpos 0
-     vexactpos 0
-     hexactsize 0
-     vexactsize 0
-     text "XXXXXXXXXX"
-     font "gui/fonts/etelkatextpro22"
-     "text halign" center
-     "text valign" center
-    }
-    TextListboxWidgetClass lstbox_Tab1 {
-     visible 1
-     clipchildren 1
-     position 0 0.036
-     size 1 0.93
-     halign center_ref
-     valign center_ref
-     hexactpos 0
-     vexactpos 0
-     hexactsize 0
-     vexactsize 0
-     style Default
-     no focus 0
-     lines 50
-     "highlight row" 0
-     font "gui/fonts/etelkatextpro14"
-    }
-   }
-  }
+
+  // ==========================================
+  // ABA 2 - MÚSICAS
+  // ==========================================
   PanelWidgetClass Panel_Tab2 {
    ignorepointer 1
-   position 264.41101 262.71002
-   size 914.25897 550.19
+   position 0 0
+   size 1920 1080
    hexactpos 1
    vexactpos 1
    hexactsize 1
    vexactsize 1
    {
-    TextWidgetClass txt_Tab2 {
+    ImageWidgetClass img_bg2 {
      ignorepointer 1
-     position 0 -0.465
-     size 1 0.0625
-     halign center_ref
-     valign center_ref
-     hexactpos 0
-     vexactpos 0
-     hexactsize 0
-     vexactsize 0
-     text "XXXXXXXXXX"
-     font "gui/fonts/etelkatextpro22"
-     "text halign" center
-     "text valign" center
+     position 0 0
+     size 1920 1080
+     hexactpos 1
+     vexactpos 1
+     hexactsize 1
+     vexactsize 1
+     imageTexture "PNH_TabletOS/GUI/Imagens/Pagina_Musicas.edds"
+     mode blend
+     "src alpha" 1
+     "no wrap" 1
+     stretch 1
     }
-    TextListboxWidgetClass lstbox_Tab2 {
-     visible 1
-     position 0 0.036
-     size 1 0.93
-     halign center_ref
-     valign center_ref
-     hexactpos 0
-     vexactpos 0
-     hexactsize 0
-     vexactsize 0
-     style Default
-     no focus 0
-     lines 50
-     font "gui/fonts/etelkatextpro14"
+    PanelWidgetClass content_Tab2 {
+     ignorepointer 1
+     position 370 187
+     size 1146 717
+     hexactpos 1
+     vexactpos 1
+     hexactsize 1
+     vexactsize 1
+     {
+      TextWidgetClass txt_Tab2 {
+       ignorepointer 1
+       position 0 -0.465
+       size 1 0.0625
+       halign center_ref
+       valign center_ref
+       hexactpos 0
+       vexactpos 0
+       hexactsize 0
+       vexactsize 0
+       text "XXXXXXXXXX"
+       font "gui/fonts/etelkatextpro22"
+       "text halign" center
+       "text valign" center
+       color 0.75 0.35 0.05 1
+      }
+      TextListboxWidgetClass lstbox_Tab2 {
+       visible 1
+       position 0 0.036
+       size 1 0.93
+       halign center_ref
+       valign center_ref
+       hexactpos 0
+       vexactpos 0
+       hexactsize 0
+       vexactsize 0
+       style Default
+       no focus 0
+       lines 50
+       font "gui/fonts/etelkatextpro14"
+       color 0.80 0.75 0.65 1
+      }
+     }
     }
    }
   }
+
+  // ==========================================
+  // ABA 3 - CHAT
+  // ==========================================
   PanelWidgetClass Panel_Tab3 {
    ignorepointer 1
-   position 264.41101 262.71002
-   size 914.25897 550.19
+   position 0 0
+   size 1920 1080
    hexactpos 1
    vexactpos 1
    hexactsize 1
    vexactsize 1
    {
-    TextWidgetClass txt_Tab3 {
+    ImageWidgetClass img_bg3 {
      ignorepointer 1
-     position 0 -0.465
-     size 1 0.0625
-     halign center_ref
-     valign center_ref
-     hexactpos 0
-     vexactpos 0
-     hexactsize 0
-     vexactsize 0
-     text "XXXXXXXXXX"
-     font "gui/fonts/etelkatextpro22"
-     "text halign" center
-     "text valign" center
+     position 0 0
+     size 1920 1080
+     hexactpos 1
+     vexactpos 1
+     hexactsize 1
+     vexactsize 1
+     imageTexture "PNH_TabletOS/GUI/Imagens/Pagina_Chat.edds"
+     mode blend
+     "src alpha" 1
+     "no wrap" 1
+     stretch 1
     }
-    TextListboxWidgetClass lstbox_Tab3 {
-     visible 1
-     position 0 0.036
-     size 1 0.93
-     halign center_ref
-     valign center_ref
-     hexactpos 0
-     vexactpos 0
-     hexactsize 0
-     vexactsize 0
-     style Default
-     no focus 0
-     lines 50
-     font "gui/fonts/etelkatextpro14"
+    PanelWidgetClass content_Tab3 {
+     ignorepointer 1
+     position 370 187
+     size 1146 717
+     hexactpos 1
+     vexactpos 1
+     hexactsize 1
+     vexactsize 1
+     {
+      TextWidgetClass txt_Tab3 {
+       ignorepointer 1
+       position 0 -0.465
+       size 1 0.0625
+       halign center_ref
+       valign center_ref
+       hexactpos 0
+       vexactpos 0
+       hexactsize 0
+       vexactsize 0
+       text "XXXXXXXXXX"
+       font "gui/fonts/etelkatextpro22"
+       "text halign" center
+       "text valign" center
+       color 0.75 0.35 0.05 1
+      }
+      TextListboxWidgetClass lstbox_Tab3 {
+       visible 1
+       position 0 0.036
+       size 1 0.93
+       halign center_ref
+       valign center_ref
+       hexactpos 0
+       vexactpos 0
+       hexactsize 0
+       vexactsize 0
+       style Default
+       no focus 0
+       lines 50
+       font "gui/fonts/etelkatextpro14"
+       color 0.80 0.75 0.65 1
+      }
+     }
     }
    }
   }
+
+  // ==========================================
+  // ABA 4 - MAPS
+  // ==========================================
   PanelWidgetClass Panel_Tab4 {
    ignorepointer 1
-   position 264.41101 262.71002
-   size 914.25897 550.19
+   position 0 0
+   size 1920 1080
    hexactpos 1
    vexactpos 1
    hexactsize 1
    vexactsize 1
    {
-    TextWidgetClass txt_Tab4 {
+    ImageWidgetClass img_bg4 {
      ignorepointer 1
-     position 0 -0.465
-     size 1 0.0625
-     halign center_ref
-     valign center_ref
-     hexactpos 0
-     vexactpos 0
-     hexactsize 0
-     vexactsize 0
-     text "XXXXXXXXXX"
-     font "gui/fonts/etelkatextpro22"
-     "text halign" center
-     "text valign" center
+     position 0 0
+     size 1920 1080
+     hexactpos 1
+     vexactpos 1
+     hexactsize 1
+     vexactsize 1
+     imageTexture "PNH_TabletOS/GUI/Imagens/Pagina_Maps.edds"
+     mode blend
+     "src alpha" 1
+     "no wrap" 1
+     stretch 1
     }
-    TextListboxWidgetClass lstbox_Tab4 {
-     visible 1
-     position 0 0.036
-     size 1 0.93
-     halign center_ref
-     valign center_ref
-     hexactpos 0
-     vexactpos 0
-     hexactsize 0
-     vexactsize 0
-     style Default
-     no focus 0
-     lines 50
-     font "gui/fonts/etelkatextpro14"
+    PanelWidgetClass content_Tab4 {
+     ignorepointer 1
+     position 370 187
+     size 1146 717
+     hexactpos 1
+     vexactpos 1
+     hexactsize 1
+     vexactsize 1
+     {
+      TextWidgetClass txt_Tab4 {
+       ignorepointer 1
+       position 0 -0.465
+       size 1 0.0625
+       halign center_ref
+       valign center_ref
+       hexactpos 0
+       vexactpos 0
+       hexactsize 0
+       vexactsize 0
+       text "XXXXXXXXXX"
+       font "gui/fonts/etelkatextpro22"
+       "text halign" center
+       "text valign" center
+       color 0.75 0.35 0.05 1
+      }
+      TextListboxWidgetClass lstbox_Tab4 {
+       visible 1
+       position 0 0.036
+       size 1 0.93
+       halign center_ref
+       valign center_ref
+       hexactpos 0
+       vexactpos 0
+       hexactsize 0
+       vexactsize 0
+       style Default
+       no focus 0
+       lines 50
+       font "gui/fonts/etelkatextpro14"
+       color 0.80 0.75 0.65 1
+      }
+     }
     }
    }
+  }
+
+  // ==========================================
+  // TEXTOS FIXOS E BOTÕES INVISÍVEIS (Por cima de tudo)
+  // ==========================================
+  TextWidgetClass txt_IPServerTime {
+   ignorepointer 1
+   position 1081 938
+   size 200 36
+   hexactpos 1
+   vexactpos 1
+   hexactsize 1
+   vexactsize 1
+   text "XX:XX"
+   font "gui/fonts/etelkatextpro16"
+   "text halign" left
+   "text valign" center
+   color 0.80 0.75 0.65 1
+  }
+  TextWidgetClass txt_IPServerName {
+   ignorepointer 1
+   position 370 938
+   size 500 36
+   hexactpos 1
+   vexactpos 1
+   hexactsize 1
+   vexactsize 1
+   text "XXXXXXXXXX"
+   font "gui/fonts/etelkatextpro16"
+   "text valign" center
+   color 0.80 0.75 0.65 1
+  }
+  ButtonWidgetClass btn_Tab1 {
+   position 1566 281
+   size 60 60
+   hexactpos 1
+   vexactpos 1
+   hexactsize 1
+   vexactsize 1
+   style Default
+   alpha 0
+  }
+  ButtonWidgetClass btn_Tab2 {
+   position 1349 251
+   size 60 60
+   hexactpos 1
+   vexactpos 1
+   hexactsize 1
+   vexactsize 1
+   style Default
+   alpha 0
+  }
+  ButtonWidgetClass btn_Tab3 {
+   position 1354 521
+   size 60 60
+   hexactpos 1
+   vexactpos 1
+   hexactsize 1
+   vexactsize 1
+   style Default
+   alpha 0
+  }
+  ButtonWidgetClass btn_Tab4 {
+   position 1354 391
+   size 60 60
+   hexactpos 1
+   vexactpos 1
+   hexactsize 1
+   vexactsize 1
+   style Default
+   alpha 0
+  }
+  ButtonWidgetClass btn_Discord {
+   position 1354 786
+   size 60 60
+   hexactpos 1
+   vexactpos 1
+   hexactsize 1
+   vexactsize 1
+   style Default
+   alpha 0
+  }
+  ButtonWidgetClass btn_Donate {
+   position 1354 649
+   size 60 60
+   hexactpos 1
+   vexactpos 1
+   hexactsize 1
+   vexactsize 1
+   style Default
+   alpha 0
+  }
+  ButtonWidgetClass btn_Close {
+   position 1566 648
+   size 60 60
+   hexactpos 1
+   vexactpos 1
+   hexactsize 1
+   vexactsize 1
+   style Default
+   alpha 0
+  }
+  ButtonWidgetClass btn_VolUp {
+   position 1566 440
+   size 60 60
+   hexactpos 1
+   vexactpos 1
+   hexactsize 1
+   vexactsize 1
+   style Default
+   alpha 0
+  }
+  ButtonWidgetClass btn_VolDown {
+   position 1566 521
+   size 60 60
+   hexactpos 1
+   vexactpos 1
+   hexactsize 1
+   vexactsize 1
+   style Default
+   alpha 0
   }
  }
 }

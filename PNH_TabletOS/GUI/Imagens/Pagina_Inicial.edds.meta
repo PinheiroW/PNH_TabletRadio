@@ -1,0 +1,16 @@
+MetaFileClass {
+ Name "{8A840F01ED0C82A2}Imagens/Pagina Inicial.edds"
+ Author "desktop-slocuqf"
+ ChangeDate -238308250
+ Configurations {
+  PNGResourceClass PC {
+   SourceFile "Pagina Inicial.png"
+  }
+  PNGResourceClass XBOX_ONE : PC {
+  }
+  PNGResourceClass PS4 : PC {
+  }
+  PNGResourceClass LINUX : PC {
+  }
+ }
+}

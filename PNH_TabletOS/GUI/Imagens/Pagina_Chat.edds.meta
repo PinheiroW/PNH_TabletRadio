@@ -1,0 +1,16 @@
+MetaFileClass {
+ Name "{6E8860638A89D32E}Imagens/Pagina Chat.edds"
+ Author "desktop-slocuqf"
+ ChangeDate 1909175398
+ Configurations {
+  PNGResourceClass PC {
+   SourceFile "Pagina Chat.png"
+  }
+  PNGResourceClass XBOX_ONE : PC {
+  }
+  PNGResourceClass PS4 : PC {
+  }
+  PNGResourceClass LINUX : PC {
+  }
+ }
+}
