@@ -1,91 +1,42 @@
-class CfgPatches
-{
-	class PNH_TabletOS
-	{
-		units[]={};
-		weapons[]={};
-		requiredVersion=0.1;
-		requiredAddons[]=
-		{
-			"DZ_Data",
-			"DZ_Scripts"
-		};
-	};
+class CfgPatches {
+    class PNH_TabletOS {
+        units[]={}; weapons[]={};
+        requiredVersion=0.1;
+        requiredAddons[]={"DZ_Data","DZ_Scripts"};
+    };
 };
 
-class CfgSounds
-{
-	// Definição das trilhas de rádio
-	class PNH_Radio_Zombie
-	{
-		sound[] = {"PNH_TabletOS\sounds\zombie_broadcast.ogg", 1.0, 1};
-	};
-	class PNH_Radio_Jax
-	{
-		sound[] = {"PNH_TabletOS\sounds\jax_broadcast.ogg", 1.0, 1};
-	};
-	class PNH_Radio_Ezra
-	{
-		sound[] = {"PNH_TabletOS\sounds\ezra_broadcast.ogg", 1.0, 1};
-	};
+class CfgSoundShaders {
+    class PNH_Radio_Base_SoundShader {
+        volume = 1;
+        range = 50; // Distância que outros jogadores podem ouvir
+    };
+    class PNH_Radio_Zombie_SoundShader: PNH_Radio_Base_SoundShader {
+        samples[] = {{"PNH_TabletOS\sounds\zombie_broadcast", 1}};
+    };
+    class PNH_Radio_Jax_SoundShader: PNH_Radio_Base_SoundShader {
+        samples[] = {{"PNH_TabletOS\sounds\jax_broadcast", 1}};
+    };
+    class PNH_Radio_Ezra_SoundShader: PNH_Radio_Base_SoundShader {
+        samples[] = {{"PNH_TabletOS\sounds\ezra_broadcast", 1}};
+    };
 };
 
-class CfgMods
-{
-	class PNH_TabletOS
-	{
-	    dir="PNH_TabletOS";
-	    picture="";
-	    action="";
-	    hideName=1;
-	    hidePicture=1;
-	    name="PNH Tablet OS";
-	    credits="Pinheiro";
-	    author="Pinheiro";
-	    authorID="0";
-	    version="1.0";
-	    extra=0;
-	    type="mod";
-	    
-	    // Link para o arquivo de inputs que organizamos na aba PNH
-	    inputs="PNH_TabletOS/scripts/3_Game/inputs.xml";
-	    
-	    dependencies[]=
-	    {
-	        "Game",
-	        "World",
-	        "Mission"
-	    };
-	    
-	    class defs
-	    {
-			class gameScriptModule
-            {
-                value="";
-                files[]=
-                {
-                    "PNH_TabletOS/scripts/Common",
-                    "PNH_TabletOS/scripts/3_Game"
-                };
-            };
-            class worldScriptModule
-            {
-                value="";
-                files[]=
-                {
-                    "PNH_TabletOS/scripts/Common",
-                    "PNH_TabletOS/scripts/4_World"
-                };
-            };
-            class missionScriptModule
-            {
-                value="";
-                files[]=
-                {
-                    "PNH_TabletOS/scripts/Common",
-                    "PNH_TabletOS/scripts/5_Mission"
-                };
-            };
-        };
+class CfgSoundSets {
+    class PNH_Radio_Base_SoundSet {
+        soundShaders[] = {};
+        volumeCurve = "InverseSquare2Curve";
+        spatial = 1; // Som 3D (sai do tablet)
+        doppler = 0;
+        loop = 0;
+    };
+    class PNH_Radio_Zombie_SoundSet: PNH_Radio_Base_SoundSet {
+        soundShaders[] = {"PNH_Radio_Zombie_SoundShader"};
+    };
+    class PNH_Radio_Jax_SoundSet: PNH_Radio_Base_SoundSet {
+        soundShaders[] = {"PNH_Radio_Jax_SoundShader"};
+    };
+    class PNH_Radio_Ezra_SoundSet: PNH_Radio_Base_SoundSet {
+        soundShaders[] = {"PNH_Radio_Ezra_SoundShader"};
     };
 };

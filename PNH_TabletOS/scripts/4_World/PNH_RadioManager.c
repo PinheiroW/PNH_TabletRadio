@@ -1,8 +1,9 @@
 class PNH_RadioManager
 {
     private static ref PNH_RadioManager m_Instance;
-    private ref AbstractWave m_CurrentSound; // Mantém a referência para o som tocar
+    protected EffectSound m_SoundPlaying; // Referência persistente como no original
     private int m_CurrentStationIndex = -1;
+    private string m_CurrentSoundSet = "";
 
     static PNH_RadioManager GetInstance()
     {
@@ -12,38 +13,39 @@ class PNH_RadioManager
 
     void PlayStation(int index)
     {
-        if (m_CurrentStationIndex == index && m_CurrentSound) return;
-
-        Stop();
-
         array<ref PNH_RadioStation> stations = PNH_Radio_Database.GetStations();
         if (index < 0 || index >= stations.Count()) return;
 
-        PNH_RadioStation target = stations.Get(index);
-        SoundParams params = new SoundParams(target.m_SoundName);
-        SoundObjectBuilder builder = new SoundObjectBuilder(params);
-        SoundObject soundObj = builder.BuildSoundObject();
+        string targetSoundSet = stations.Get(index).m_SoundName + "_SoundSet";
+
+        // Se já está tocando esta rádio, não faz nada
+        if (m_CurrentStationIndex == index && m_SoundPlaying) return;
+
+        Stop();
+
+        PlayerBase player = PlayerBase.Cast(GetGame().GetPlayer());
+        if (!player) return;
+
+        // O SEffectManager.PlaySoundSet toca o som vinculado ao jogador (3D)
+        // Isso imita o comportamento do rádio original preso ao item
+        m_SoundPlaying = SEffectManager.PlaySoundSet(m_SoundPlaying, targetSoundSet, 0, 0);
         
-        if (soundObj)
-        {
-            m_CurrentSound = GetGame().GetSoundScene().Play2D(soundObj, builder);
-            if (m_CurrentSound)
-            {
-                m_CurrentSound.SetVolume(0.8);
-                m_CurrentSound.Loop(target.m_IsLoop);
-                m_CurrentSound.Play();
-                m_CurrentStationIndex = index;
-            }
+        if (m_SoundPlaying) {
+            m_SoundPlaying.SetSoundLoop(stations.Get(index).m_IsLoop);
+            m_SoundPlaying.SetSoundAutodestroy(true);
+            m_CurrentStationIndex = index;
+            m_CurrentSoundSet = targetSoundSet;
+            Print("[PNH_Radio] Sucesso: Iniciando SoundSet " + targetSoundSet);
         }
     }
 
     void Stop()
     {
-        if (m_CurrentSound)
-        {
-            m_CurrentSound.Stop();
-            m_CurrentSound = null;
+        if (m_SoundPlaying) {
+            m_SoundPlaying.SoundStop();
+            m_SoundPlaying = null;
         }
         m_CurrentStationIndex = -1;
+        m_CurrentSoundSet = "";
     }
 }
