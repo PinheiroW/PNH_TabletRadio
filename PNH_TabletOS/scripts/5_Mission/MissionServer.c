@@ -3,9 +3,9 @@ modded class MissionServer
     override void OnInit()
     {
         super.OnInit();
-        // Inicializa o sistema central. No servidor, isso dispara a criação do JSON.
+        // Chama o sistema central. No servidor, isso executa a criação do diretório e do JSON.
         GetDiPSystemCore(); 
-        Print("[PNH_Tablet] Sistema inicializado no Servidor.");
+        Print("[PNH_Tablet] Servidor inicializado. Pasta de config verificada.");
     }
 
     override void InvokeOnConnect(PlayerBase player, PlayerIdentity identity)
@@ -13,7 +13,6 @@ modded class MissionServer
         super.InvokeOnConnect(player, identity);
         if (identity)
         {
-            // Envia as configurações do JSON para o tablet do jogador
             DiPRPC_SendSettings(identity, GetDiPSystemCore().m_ConfigSettingsClient);
         }
     }

@@ -1,5 +1,4 @@
 #ifndef SERVER
-// Este arquivo só existe para o Cliente (Jogador)
 class PNH_RadioManager
 {
     private static ref PNH_RadioManager m_Instance;
@@ -18,19 +17,23 @@ class PNH_RadioManager
         if (index < 0 || index >= stations.Count()) return;
 
         string targetSoundSet = stations.Get(index).m_SoundName + "_SoundSet";
-
         if (m_CurrentStationIndex == index && m_SoundPlaying) return;
 
         Stop();
 
-        // SEffectManager.PlaySoundSet é o padrão profissional para som 3D
-        m_SoundPlaying = SEffectManager.PlaySoundSet(m_SoundPlaying, targetSoundSet, 0, 0);
+        // Obtém o jogador atual para que o som saia dele
+        PlayerBase player = PlayerBase.Cast(GetGame().GetPlayer());
         
-        if (m_SoundPlaying) {
-            m_SoundPlaying.SetSoundLoop(stations.Get(index).m_IsLoop);
-            m_SoundPlaying.SetSoundAutodestroy(true);
-            m_CurrentStationIndex = index;
-            Print("[PNH_Radio] Som iniciado: " + targetSoundSet);
+        if (player) {
+            // CORREÇÃO (Linha 24): A função correta do DayZ é PlaySoundOnObject
+            m_SoundPlaying = SEffectManager.PlaySoundOnObject(targetSoundSet, player);
+            
+            if (m_SoundPlaying) {
+                m_SoundPlaying.SetSoundLoop(stations.Get(index).m_IsLoop);
+                m_SoundPlaying.SetSoundAutodestroy(true);
+                m_CurrentStationIndex = index;
+                Print("[PNH_Radio] Som iniciado via SEffectManager: " + targetSoundSet);
+            }
         }
     }
 
@@ -44,7 +47,7 @@ class PNH_RadioManager
     }
 }
 #else
-// Skeleton para o Servidor não dar erro de compilação em outros scripts
+// Versão vazia para o Servidor não crashar ao ler a classe
 class PNH_RadioManager {
     static ref PNH_RadioManager m_Instance;
     static PNH_RadioManager GetInstance() { return null; }

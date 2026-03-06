@@ -48,6 +48,10 @@ class CfgMods {
         author = "Pinheiro";
         version = "1.2";
         type = "mod";
+        
+        // A LINHA QUE EU DESTRUÍ E AGORA ESTÁ RESTAURADA:
+        inputs = "PNH_TabletOS/scripts/3_Game/inputs.xml"; 
+        
         dependencies[] = {"Game", "World", "Mission"};
         class defs {
             class gameScriptModule {
