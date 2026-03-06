@@ -5,7 +5,7 @@ class DiPSettings
 	string 			DiscordLink;
 	string 			DonateLink;
 
-    // As variáveis que faltavam para o JSON (1 = Sim, 0 = Não)
+    // As variáveis para o JSON (1 = Sim, 0 = Não)
 	int 			AllowUseWhileDriving;
 	int 			AllowUseWhileBleeding;
 
@@ -50,7 +50,7 @@ class DiPSettings
 		}
 
 		JsonFileLoader<DiPSettings>.JsonSaveFile(DIP_CONFIG, this);
-		Print("!~!~! DIP Default Settings Created !~!~!");
+		Print("!~!~! PNH_Tablet Config Padrão Criada !~!~!");
 	}
 
 	static ref DiPSettings Load()
@@ -66,11 +66,12 @@ class DiPSettings
 
 		if (FileExist(DIP_CONFIG)) {
 			JsonFileLoader<DiPSettings>.JsonLoadFile(DIP_CONFIG, settings);
-			Print("!~!~! DIP User Settings Loaded !~!~!");
+			// A alteração que solicitou está aqui:
+			Print("!~!~! PNH_Tablet Config Carregadas !~!~!");
 		}
 		else {
 			settings.DiPDefaultSettings();
-			Print("!~!~! DIP Default Settings Loaded !~!~!");
+			Print("!~!~! PNH_Tablet Config Padrão Carregada !~!~!");
 		}
 
 		return settings;
