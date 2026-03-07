@@ -54,46 +54,26 @@ FrameWidgetClass rootFrame {
     }
     PanelWidgetClass content_Tab1 {
      ignorepointer 1
-     position 370 187
-     size 1146 717
+     position 409 243
+     size 550 638
      hexactpos 1
      vexactpos 1
      hexactsize 1
      vexactsize 1
+     clipchildren 1
      {
-      TextWidgetClass txt_Tab1 {
-       visible 1
-       ignorepointer 1
-       position 0 -0.465
-       size 1 0.0625
-       halign center_ref
-       valign center_ref
-       hexactpos 0
-       vexactpos 0
-       hexactsize 0
-       vexactsize 0
-       text "XXXXXXXXXX"
-       font "gui/fonts/etelkatextpro22"
-       "text halign" center
-       "text valign" center
-       color 0.75 0.35 0.05 1
-      }
       TextListboxWidgetClass lstbox_Tab1 {
        visible 1
-       clipchildren 1
-       position 0 0.036
-       size 1 0.93
-       halign center_ref
-       valign center_ref
-       hexactpos 0
-       vexactpos 0
-       hexactsize 0
-       vexactsize 0
+       position 0 0
+       size 580 638
+       hexactpos 1
+       vexactpos 1
+       hexactsize 1
+       vexactsize 1
        style Default
        no focus 0
        lines 50
-       "highlight row" 0
-       font "gui/fonts/etelkatextpro14"
+       font "gui/fonts/metronlight22"
        color 0.80 0.75 0.65 1
       }
      }
@@ -129,43 +109,26 @@ FrameWidgetClass rootFrame {
     }
     PanelWidgetClass content_Tab2 {
      ignorepointer 1
-     position 370 187
-     size 1146 717
+     position 409 243
+     size 550 638
      hexactpos 1
      vexactpos 1
      hexactsize 1
      vexactsize 1
+     clipchildren 1
      {
-      TextWidgetClass txt_Tab2 {
-       ignorepointer 1
-       position 0 -0.465
-       size 1 0.0625
-       halign center_ref
-       valign center_ref
-       hexactpos 0
-       vexactpos 0
-       hexactsize 0
-       vexactsize 0
-       text "XXXXXXXXXX"
-       font "gui/fonts/etelkatextpro22"
-       "text halign" center
-       "text valign" center
-       color 0.75 0.35 0.05 1
-      }
       TextListboxWidgetClass lstbox_Tab2 {
        visible 1
-       position 0 0.036
-       size 1 0.93
-       halign center_ref
-       valign center_ref
-       hexactpos 0
-       vexactpos 0
-       hexactsize 0
-       vexactsize 0
+       position 0 0
+       size 580 638
+       hexactpos 1
+       vexactpos 1
+       hexactsize 1
+       vexactsize 1
        style Default
        no focus 0
        lines 50
-       font "gui/fonts/etelkatextpro14"
+       font "gui/fonts/metronlight22"
        color 0.80 0.75 0.65 1
       }
      }
@@ -201,43 +164,26 @@ FrameWidgetClass rootFrame {
     }
     PanelWidgetClass content_Tab3 {
      ignorepointer 1
-     position 370 187
-     size 1146 717
+     position 409 243
+     size 550 638
      hexactpos 1
      vexactpos 1
      hexactsize 1
      vexactsize 1
+     clipchildren 1
      {
-      TextWidgetClass txt_Tab3 {
-       ignorepointer 1
-       position 0 -0.465
-       size 1 0.0625
-       halign center_ref
-       valign center_ref
-       hexactpos 0
-       vexactpos 0
-       hexactsize 0
-       vexactsize 0
-       text "XXXXXXXXXX"
-       font "gui/fonts/etelkatextpro22"
-       "text halign" center
-       "text valign" center
-       color 0.75 0.35 0.05 1
-      }
       TextListboxWidgetClass lstbox_Tab3 {
        visible 1
-       position 0 0.036
-       size 1 0.93
-       halign center_ref
-       valign center_ref
-       hexactpos 0
-       vexactpos 0
-       hexactsize 0
-       vexactsize 0
+       position 0 0
+       size 580 638
+       hexactpos 1
+       vexactpos 1
+       hexactsize 1
+       vexactsize 1
        style Default
        no focus 0
        lines 50
-       font "gui/fonts/etelkatextpro14"
+       font "gui/fonts/metronlight22"
        color 0.80 0.75 0.65 1
       }
      }
@@ -273,43 +219,26 @@ FrameWidgetClass rootFrame {
     }
     PanelWidgetClass content_Tab4 {
      ignorepointer 1
-     position 370 187
-     size 1146 717
+     position 409 243
+     size 550 638
      hexactpos 1
      vexactpos 1
      hexactsize 1
      vexactsize 1
+     clipchildren 1
      {
-      TextWidgetClass txt_Tab4 {
-       ignorepointer 1
-       position 0 -0.465
-       size 1 0.0625
-       halign center_ref
-       valign center_ref
-       hexactpos 0
-       vexactpos 0
-       hexactsize 0
-       vexactsize 0
-       text "XXXXXXXXXX"
-       font "gui/fonts/etelkatextpro22"
-       "text halign" center
-       "text valign" center
-       color 0.75 0.35 0.05 1
-      }
       TextListboxWidgetClass lstbox_Tab4 {
        visible 1
-       position 0 0.036
-       size 1 0.93
-       halign center_ref
-       valign center_ref
-       hexactpos 0
-       vexactpos 0
-       hexactsize 0
-       vexactsize 0
+       position 0 0
+       size 580 638
+       hexactpos 1
+       vexactpos 1
+       hexactsize 1
+       vexactsize 1
        style Default
        no focus 0
        lines 50
-       font "gui/fonts/etelkatextpro14"
+       font "gui/fonts/metronlight22"
        color 0.80 0.75 0.65 1
       }
      }
@@ -322,31 +251,33 @@ FrameWidgetClass rootFrame {
   // ==========================================
   TextWidgetClass txt_IPServerTime {
    ignorepointer 1
-   position 1081 938
+   position 1056 935
    size 200 36
    hexactpos 1
    vexactpos 1
    hexactsize 1
    vexactsize 1
    text "XX:XX"
-   font "gui/fonts/etelkatextpro16"
+   font "gui/fonts/metronlight22"
    "text halign" left
    "text valign" center
    color 0.80 0.75 0.65 1
   }
   TextWidgetClass txt_IPServerName {
    ignorepointer 1
-   position 370 938
+   position 370 935
    size 500 36
    hexactpos 1
    vexactpos 1
    hexactsize 1
    vexactsize 1
    text "XXXXXXXXXX"
-   font "gui/fonts/etelkatextpro16"
+   font "gui/fonts/metronlight22"
    "text valign" center
    color 0.80 0.75 0.65 1
   }
+  
+  // Botão Regras
   ButtonWidgetClass btn_Tab1 {
    position 1566 281
    size 60 60
@@ -357,8 +288,9 @@ FrameWidgetClass rootFrame {
    style Default
    alpha 0
   }
+  // Botão Músicas (Ajustado)
   ButtonWidgetClass btn_Tab2 {
-   position 1349 251
+   position 1354 261
    size 60 60
    hexactpos 1
    vexactpos 1
@@ -367,6 +299,7 @@ FrameWidgetClass rootFrame {
    style Default
    alpha 0
   }
+  // Botão Chat
   ButtonWidgetClass btn_Tab3 {
    position 1354 521
    size 60 60
@@ -377,6 +310,7 @@ FrameWidgetClass rootFrame {
    style Default
    alpha 0
   }
+  // Botão Mapa
   ButtonWidgetClass btn_Tab4 {
    position 1354 391
    size 60 60
@@ -387,6 +321,7 @@ FrameWidgetClass rootFrame {
    style Default
    alpha 0
   }
+  // Botão Discord
   ButtonWidgetClass btn_Discord {
    position 1354 786
    size 60 60
@@ -397,6 +332,7 @@ FrameWidgetClass rootFrame {
    style Default
    alpha 0
   }
+  // Botão Loja
   ButtonWidgetClass btn_Donate {
    position 1354 649
    size 60 60
@@ -407,8 +343,9 @@ FrameWidgetClass rootFrame {
    style Default
    alpha 0
   }
+  // Botão Fechar Tela
   ButtonWidgetClass btn_Close {
-   position 1566 648
+   position 1566 600
    size 60 60
    hexactpos 1
    vexactpos 1
@@ -417,6 +354,7 @@ FrameWidgetClass rootFrame {
    style Default
    alpha 0
   }
+  // Botões de Volume
   ButtonWidgetClass btn_VolUp {
    position 1566 440
    size 60 60
